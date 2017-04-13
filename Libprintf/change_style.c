@@ -6,7 +6,7 @@
 /*   By: proso <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/17 22:07:48 by proso             #+#    #+#             */
-/*   Updated: 2017/04/07 11:58:02 by proso            ###   ########.fr       */
+/*   Updated: 2017/04/13 15:39:00 by proso            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*change_style(int x)
 	ft_strcat(str, code);
 	ft_strcat(str, "m");
 	ft_strdel(&code);
-	return (ft_strdup(str));
+	return (str);
 }
 
 int		check_code(char *str)

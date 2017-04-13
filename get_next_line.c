@@ -6,7 +6,7 @@
 /*   By: proso <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 09:24:39 by proso             #+#    #+#             */
-/*   Updated: 2017/04/05 20:21:34 by proso            ###   ########.fr       */
+/*   Updated: 2017/04/13 15:38:43 by proso            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		update_str(t_line **maillon, char **line)
 	}
 	else if (S[i] == '\0')
 	{
-		S = ft_strnew(0);
+		ft_strdel(&S);
 		if (i == 0)
 		{
 			(*maillon)->fd = 0;
