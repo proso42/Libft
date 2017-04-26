@@ -6,7 +6,7 @@
 /*   By: proso <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 09:24:39 by proso             #+#    #+#             */
-/*   Updated: 2017/04/13 15:38:43 by proso            ###   ########.fr       */
+/*   Updated: 2017/04/05 20:21:34 by proso            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,22 +69,22 @@ int		read_line(const int fd, t_line **list, t_line **maillon)
 	char	*str;
 	char	*tmp;
 	int		ret;
-    int        stop;
+	int		stop;
 
-    stop = 0;
+	stop = 0;
 	str = ft_strnew(1);
-    while (!stop && (ret = read(fd, buff, BUFF_SIZE)))
-    {
-        if (ret == -1)
-            return (-1);
-        buff[ret] = '\0';
-        tmp = ft_strdup(str);
-        ft_strdel(&str);
-        str = ft_strjoin(tmp, buff);
-        ft_strdel(&tmp);
-        if (fd == 0)
-            stop = 1;
-    }
+	while (!stop && (ret = read(fd, buff, BUFF_SIZE)))
+	{
+		if (ret == -1)
+			return (-1);
+		buff[ret] = '\0';
+		tmp = ft_strdup(str);
+		ft_strdel(&str);
+		str = ft_strjoin(tmp, buff);
+		ft_strdel(&tmp);
+		if (fd == 0)
+			stop = 1;
+	}
 	*maillon = create_maillon(fd, list, str);
 	ft_strdel(&str);
 	return (ret);
